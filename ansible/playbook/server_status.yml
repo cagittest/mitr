@@ -1,0 +1,9 @@
+---
+- hosts: server_10.7
+  become: true
+  tasks:
+    - name: verify ftp status
+      command: service proftpd status
+      
+    - name: verify node service
+      shell: ps -U mitr_el | grep node
